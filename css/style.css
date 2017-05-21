@@ -1,0 +1,29 @@
+* {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Fugaz One", serif;
+}
+
+ul.posts {
+    padding-left: 0;
+}
+
+ul.posts li {
+    display: block;
+}
+
+.post-title a {
+    font-size: 125%;
+}
+
+pre, code, tt {
+    font-family: "Ubunto Mono", monospace;
+}
+
