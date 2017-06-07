@@ -13,7 +13,7 @@ The class will meet in Lynn Business Center (LBC) room 317. LBC can be found on 
 
 If you have a laptop, you may bring it and write all your code on your own machine. The class takes place in a computer lab so there will be a computer for everyone who does not bring a laptop. If you bring a laptop, you'll want [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) so you can connect to a Linux machine we'll be using for the class exercises. You should also grab a file transfer program like [FileZilla](https://filezilla-project.org/) and perhaps a code editor like [Notepad++](https://notepad-plus-plus.org/).
 
-Except for an optional laptop, you will not need any supplies. No textbooks, no pencils, no paperclips. This website will be your primary resource.
+Except for an optional laptop, you will not need any supplies. This website will be your primary resource for course materials. We will give you access to an individual Linux server on the Google Cloud Platform. Every student will run their code on their own server in the cloud. A couple weeks after the camp ends, the servers will be shut down, although you are free to use Google's [free tier](https://cloud.google.com/free/) to keep your own cloud server indefinitely for free.
 
 ## What to study
 
