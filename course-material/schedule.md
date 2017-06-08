@@ -69,7 +69,7 @@ Before lunch:
 
 - Python programming for a BBS web server
 - Overview of proxies
-- Overview of Tor and "the dark web"
+- Overview of Tor
 - Python programming to use Tor
 - Ethics discussion
 
