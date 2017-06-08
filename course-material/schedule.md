@@ -61,7 +61,6 @@ Before lunch:
 After lunch:
 
 - Python programming to create a web server
-- Tour of Stetson IT operations center 
 
 ## Day 5: June 16
 
