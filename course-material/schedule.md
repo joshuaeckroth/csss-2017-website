@@ -45,7 +45,8 @@ Before lunch:
 
 After lunch:
 
-- Overview of public/private key pairs, PGP/GnuPG, and HTTPS/SSL
+- Tour of Stetson Information Technology operations center
+- Overview of public/private key pairs, PGP/GnuPG
 - Key signing party!
 
 ## Day 4: June 15
@@ -61,6 +62,7 @@ Before lunch:
 After lunch:
 
 - Python programming to create a web server
+- Overview of SSL/TLS/HTTPS
 
 ## Day 5: June 16
 
