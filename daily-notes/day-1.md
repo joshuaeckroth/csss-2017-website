@@ -77,3 +77,70 @@ else:
 print("{}'s sign is {}.".format(name, sign))
 ```
 
+## Cybersecurity notes
+
+Colors of hats:
+
+- white hat: good hacker
+- black hat: bad hacker
+- gray hat: perform both white/black, mercenary/freelance
+
+- script kiddie: someone who just grabs code from someone else and runs it
+
+
+## Techniques
+
+### Discovery
+
+- phreaking
+  - hacking phones
+- phishing
+  - a hacker pretends to be someone else, sends a bogus email (for example), and tries to get your login info, etc.
+- port scanning
+- password cracking
+  - today, uses GPUs for extreme performance
+- fuzzing
+  - attacking a service with nonsense input until something interesting happens, then investigate further
+- social engineering
+  - extracting information by impersonating or engendering trust
+- key logging
+  - records every key press
+- vulnerability enumeration
+  - discovering vulnerabilities
+
+### Attacks
+
+- exploiting CVEs
+- DOS/DDOS
+  - DOS = denial of service
+  - DDOS = distributed denial of service: botnet attacks all the same server at the same time
+- MITM = man in the middle: watching a connection and intercepting the traffic
+- Rootkits, trojans
+  - these are common when you download sketchy stuff
+- Viruses
+  - code that automatically infects other EXE files, etc. (programs still work, but running them spreads it more)
+- Cross-site scripting (XSS)
+  - a website allows user-provided code (like Javascript) to run on other user's browsers
+- SQL injection
+  - adding your own SQL code to a URL or input box for database access
+- buffer overflow
+  - adding your own code so the program executes it
+- ransomware
+  - lock user files until they pay
+  - often require payment in bitcoin
+
+### Defenses
+
+- Hide ports (firewalls)
+- Keep software up to date (patches)
+- Use Tails (Linux distribution), comes preinstall with lots of hacking tools, install on a USB drive, doesn't touch your hard drive
+- Train people to detect phishing attacks
+  - send phishing emails to your own employees, and then call them out
+  - stay vigilant
+- Choose strong passwords
+- Choose correct way to hash passwords
+- Proxies (hiding a service behind another service)
+- Encryption
+- Detect file changes to notice rootkits
+- Antivirus
+
