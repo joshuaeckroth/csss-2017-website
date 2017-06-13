@@ -217,4 +217,55 @@ socketfuncs.send_message(s, msg)
 s.close()
 ```
 
+### BBS Server
 
+```
+import socket
+import socketfuncs
+
+s = socket.socket()
+s.bind(('0.0.0.0', 10333))
+
+msglist = []
+while True:
+    #print("List so far: {}".format(msglist))
+    s.listen(10)
+    (conn, address) = s.accept()
+    print("Accepted connection from {}".format(address))
+
+    # send client all prior messages (in order)
+    #print("Sending count {} to client".format(len(msglist)))
+    socketfuncs.send_message(conn, str(len(msglist)))
+
+    for i in range(len(msglist)):
+        socketfuncs.send_message(conn, msglist[i])
+
+    msg = socketfuncs.receive_message(conn)
+    msglist.append(msg)
+
+s.close()
+```
+
+### BBS Client
+
+```
+import socket
+import socketfuncs
+
+s = socket.socket()
+s.connect(('127.0.0.1', 10333))
+
+# receive from server all prior messages
+msgcount = int(socketfuncs.receive_message(s))
+#print("Got count of {} messages".format(msgcount))
+
+for i in range(msgcount):
+    msg = socketfuncs.receive_message(s)
+    print(msg)
+
+msg = input("Enter your message: ")
+
+socketfuncs.send_message(s, msg)
+
+s.close()
+```
