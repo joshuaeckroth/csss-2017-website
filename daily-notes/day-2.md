@@ -269,3 +269,16 @@ socketfuncs.send_message(s, msg)
 
 s.close()
 ```
+
+## Domain names
+
+Examples:
+
+- google.com
+- amazon.com
+- reddit.com
+- facebook.com
+- twitter.com
+
+[WHOIS](https://www.godaddy.com/whois) allows anyone to lookup the registered owner of a domain.
+
