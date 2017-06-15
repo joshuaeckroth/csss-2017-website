@@ -198,8 +198,7 @@ def save_pickle(passmap, password):
     key_hash = sha256.digest()
     file_content = pickle.dumps(passmap)
     iv = Random.new().read(AES.block_size)
-    cipher = AES.new(key_hash, AES.MODE_CTR, iv, counter=Counter.new(1
-28))
+    cipher = AES.new(key_hash, AES.MODE_CTR, iv, counter=Counter.new(128))
     encrypted_content = iv + cipher.encrypt(file_content)
     with open("passwords.pkl", "wb") as outfile:
         outfile.write(encrypted_content)
@@ -213,8 +212,7 @@ def load_pickle(password):
             encrypted_content = infile.read()
         iv = encrypted_content[0:AES.block_size]
         encrypted_content = encrypted_content[AES.block_size:]
-        cipher = AES.new(key_hash, AES.MODE_CTR, iv, counter=Counter.n
-ew(128))
+        cipher = AES.new(key_hash, AES.MODE_CTR, iv, counter=Counter.new(128))
         passmap = pickle.loads(cipher.decrypt(encrypted_content))
     else:
         passmap = {}
