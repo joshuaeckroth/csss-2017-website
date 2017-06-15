@@ -166,3 +166,70 @@ socketfuncs.send_message(s2, msg)
 s2.close()
 ```
 
+## Password manager
+
+Goal is to have a tool that both creates and keeps track of passwords for various sites. The passwords must be randomly generated.
+
+```
+import random
+import pickle
+import os.path
+import getpass
+from Crypto import Random
+from Crypto.Hash import SHA256
+from Crypto.Util import Counter
+from Crypto.Cipher import AES
+
+# goal: repeat the random character generator below 10 times,
+# and put all the symbols together into one string, and print it
+
+# generate a random password
+def generate_password():
+    password = ""
+    for i in range(10):
+        n = random.randint(33, 126)
+        sym = chr(n)
+        password += sym
+    return password
+
+def save_pickle(passmap, password):
+    sha256 = SHA256.new()
+    sha256.update(str.encode(password))
+    key_hash = sha256.digest()
+    file_content = pickle.dumps(passmap)
+    iv = Random.new().read(AES.block_size)
+    cipher = AES.new(key_hash, AES.MODE_CTR, iv, counter=Counter.new(1
+28))
+    encrypted_content = iv + cipher.encrypt(file_content)
+    with open("passwords.pkl", "wb") as outfile:
+        outfile.write(encrypted_content)
+
+def load_pickle(password):
+    if os.path.exists("passwords.pkl"):
+        sha256 = SHA256.new()
+        sha256.update(str.encode(password))
+        key_hash = sha256.digest()
+        with open("passwords.pkl", "rb") as infile:
+            encrypted_content = infile.read()
+        iv = encrypted_content[0:AES.block_size]
+        encrypted_content = encrypted_content[AES.block_size:]
+        cipher = AES.new(key_hash, AES.MODE_CTR, iv, counter=Counter.n
+ew(128))
+        passmap = pickle.loads(cipher.decrypt(encrypted_content))
+    else:
+        passmap = {}
+    return passmap
+
+pickle_pass = getpass.getpass("Enter password: ")
+
+passmap = load_pickle(pickle_pass)
+
+while True:
+    login = input("Type a existing login name or new one: ")
+    if login not in passmap:
+        password = generate_password()
+        passmap[login] = password
+        save_pickle(passmap, pickle_pass)
+    print("Password is: {}".format(passmap[login]))
+```
+
