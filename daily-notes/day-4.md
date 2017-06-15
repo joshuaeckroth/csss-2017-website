@@ -41,7 +41,7 @@ domainmap = {
     'cmeixsel': '104.196.51.69',
     'charles': '35.190.143.160',
     'brian': '35.190.149.3',
-    'wparson': '35.190.144.189',                              [32/200]
+    'wparson': '35.190.144.189',
     'nick': '104.196.100.25',
     'mario': '35.185.1.35',
     'anar': '35.185.84.111',
@@ -302,8 +302,6 @@ Quote about HAVEGE:
 > surprised to view the FIPS test results in the bottom of this
 > article.
 
-
-
 ## Key signing
 
 ```
@@ -315,7 +313,7 @@ gpg --send-key [key-id]
 
 ## SSL
 
-Critical issue: not easy to share public keys ahead of time, before going to a website. Thus, we need a service for creating "certificates" from "certificate authorities" that is default-trusted by the browser.
+Critical issue: not easy to share public keys ahead of time, before going to a website. Thus, we need a service for creating "certificates" from "certificate authorities" that are default-trusted by the browser.
 
 - Web server has two keys: public and private
 - Public key gets signed by a certificate authority, after you pay them.
