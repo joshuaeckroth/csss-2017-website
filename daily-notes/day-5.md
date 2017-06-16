@@ -7,3 +7,7 @@ layout: note
 
 (Daily notes from class will appear here. I'll type them as we discuss in class, and then post them on this website.)
 
+## Proxies
+
+Download [socks.py](/socks.py)
+
