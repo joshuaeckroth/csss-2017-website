@@ -25,6 +25,8 @@ The goal of Tor ("The Onion Router") is to anonymize traffic. The destination se
 
 ## BBS Client with Tor
 
+Download [socks.py](/socks.py)
+
 ```
 import socket
 import socketfuncs
@@ -113,8 +115,48 @@ while True:
 s.close()
 ```
 
+## Summary
+
+### Linux summary
+
+You can get your own Linux vm from [Google for free](https://cloud.google.com/free/).
+
+Transfer files with [Filezilla](https://filezilla-project.org/).
+
+### Python summary
+
+- variables: `x = 5`; types: integer, string, boolean
+- conditionals: `if x < 5:` or `elif x < 5:` and `else:`; code inside the condition must be indented
+- functions: they allow you to isolate repeated code under a single name, possibly with arguments; `def myfunc(a,b):`, contents of function must be indented
+- random numbers: `import random`, `random.randint(lower, upper)`
+- loops: `while x < 5:` or `for i in range(10):` and `for k in mydictionary:`, allow you to repeat code until the condition is false or `break`
+- lists: `vals = []`, or `vals = [1, 2, 3]`, and looping through list: `for x in vals:` and adding to list: `vals.append(4)`
+- dictionaries: `d = {}`, or `d = {"key1": "val1", "key2": "val2"}`, and looping through keys of dictionary: `for k in d:` and getting value out of dictionary: `d["key2"]` and setting a value: `d["key3"] = "val3"`
+
+Download Python 3 for [Windows](https://www.python.org/downloads/).
+
+
+### Cybersecurity summary
+
+- avoid phishing attempts
+- avoid installing random apps
+- use random passwords, never reuse a password, use a password manager
+- use gpg/pgp to send encrypted emails
+- use gpg/pgp signing to prove you authored messages or programs
+- run as few services as possible, use firewalls to prevent incoming attacks and to prevent apps from making outside connections
+- use Tor to stay anonymous
+- only in the case of sending tips to NYTimes, use the dark web
 
 
 
-Download [socks.py](/socks.py)
+
+
+
+
+
+
+
+
+
+
 
